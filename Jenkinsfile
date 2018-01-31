@@ -22,10 +22,10 @@ pipeline {
             }
             post {
                 success {
-                    myNewLib (channel: '#work-test', color: '#00FF00', message: "Build is success (${env.BUILD_URL})")
+                    myNewLib (channel: '#work-test', message: "Build is success (${env.BUILD_URL})")
                 }
                 failure {
-                    myNewLib (channel: '#libra-test', color: '#FF0000', message: "Build failed (${env.BUILD_URL})")
+                    myNewLib (channel: '#libra-test', message: "Build failed (${env.BUILD_URL})")
                 }
             }
         }
