@@ -22,10 +22,10 @@ pipeline {
             }
             post {
                 success {
-                    myNewLib (channel: '#work-test', email: 'vijay45kmar@gmail.com', color: '#00FF00', message: "Build is success (${env.BUILD_URL})")
+                    myNewLib (channel: '#work-test', email: 'vijay45kmar@gmail.com', color: '#00FF00', message: "Build is success (${env.BUILD_URL})", subject: "${env.service} Pipeline Notification")
                 }
                 failure {
-                    myNewLib (channel: '#libra-test', email: 'vijay45kmar@gmail.com', color: '#FF0000', message: "Build failed (${env.BUILD_URL})")
+                    myNewLib (channel: '#libra-test', email: 'vijay45kmar@gmail.com', color: '#FF0000', message: "Build failed (${env.BUILD_URL})", subject: "${env.service} Pipeline Notification")
                 }
             }
         }
